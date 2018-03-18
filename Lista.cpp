@@ -1,3 +1,5 @@
+// Lista.cpp: define el punto de entrada de la aplicación de consola.
+//
 
 #include "stdafx.h"
 #include <iostream>
@@ -147,6 +149,12 @@ void eliminar(struct Tlista *L, NodoLista *p) {
 		cout << "La lista esta vacia " << endl;
 }
 
+void eliminaNum(struct Tlista *L, int n) {
+
+	eliminar(L, busca(L, n));
+}
+
+
 void insertaOrd(struct Tlista *L, int v) {
 	NodoLista *q = L->inicio;
 	if (vacia(L))
@@ -251,7 +259,7 @@ int main()
 		case 5:
 			cout << "introduce el valor que quieres eliminar" << endl;
 			cin >> n;
-			eliminar(L, busca(L, n));
+			eliminaNum(L,n);
 			cout << "Valor eliminado correctamente " << endl << endl; 
 			break;
 		case 6:
